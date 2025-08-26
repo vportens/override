@@ -1,0 +1,29 @@
+
+void decrypt(int key) {
+    buf = "Q}|u`sfg~sf{}|a3";
+    while (i < len(buf)) {
+        buf[i] = buf[i] ^ key;
+        i++;
+    }
+    if (strncmp(buf, "Congratulations!", 17) == 0) {
+        system("/bin/sh");
+    }
+}
+
+int test(char *buffer) {
+    int input;
+    scanf("%d", &input);
+    nbr = 322424845 - input;
+    if (nbr <= 21) {
+        decrypt(nbr);
+    }
+    else {
+        decrypt(rand());
+    }
+}
+
+int main() {
+    char buffer[17] = "Q}|u`sfg~sf{}|a3";
+
+    test(buffer);
+}
