@@ -1,0 +1,22 @@
+
+int main() {
+    char buf[156];
+    int child; 
+
+    child = fork();
+    if (child == 0) {
+        ptrace(PTRACE_TRACEME, 0, NULL, NULL);
+        puts("give me some shellcode, k");
+        gets(buf);
+    }
+    else {
+        while (1) {
+            wait(&status);
+            if (WIFEXITED(status))
+                break;
+            ptrace(PTRACE_PEEKUSER, child, 44, NULL);
+        }
+
+    }
+    return 0;
+}
