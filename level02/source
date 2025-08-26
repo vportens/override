@@ -1,0 +1,24 @@
+
+
+int main(){
+    char *flag;
+    char *input;
+
+    flag = fopen("/home/users/level03/.pass", "r");
+    
+    printf("--[ Username: ");
+    fget(input, 100, stdin);
+    printf("--[ Password: ");
+    fget(input, 100, stdin);
+    if (strncpm(flag, input, strlen(flag)) == 0){
+        printf("Greetings, %s!\n",local_78);
+        system("/bin/sh");
+        return 0;
+    }
+    else {
+        printf(input);
+        puts(" does not have access!");
+    }
+
+
+}
