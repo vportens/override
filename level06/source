@@ -1,0 +1,35 @@
+
+int auth(char *login, char *mdp) {
+    int hash_login;
+    if (ptrace() == true) {
+        return 1;
+    }
+    hash_login = hash(login());
+    if (mdp == hash_login) {
+        return 0;
+    }
+    return 1
+}
+
+int main() {
+    char login[32];
+    char *mdp;
+    puts("***********************************");      puts("*\t\tlevel06\t\t  *");
+    puts("***********************************");
+    printf("-> Enter Login: ");
+    fgets(login,32,stdin);
+    puts("***********************************");
+    puts("***** NEW ACCOUNT DETECTED ********");
+    puts("***********************************");
+    printf("-> Enter Serial: ");
+    scanf(mdp);
+    iVar1 = auth(login, mdp);
+    if (iVar1 == 0) {
+        puts("Authenticated!");
+        system("/bin/sh");
+    }
+    else {
+        return 1;
+    }
+    
+}
